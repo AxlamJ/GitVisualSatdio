@@ -1,0 +1,43 @@
+﻿@model invetory_managament.Models.Product
+
+@{
+    ViewBag.Title = "DetailProduct";
+}
+
+<h2>Detail Product</h2>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Product Id")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Product Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Product Qty")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_qty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdateProduct", "Product", new { id = Model.Id }, new { @class = "btn btn-primary" })
+
+    @Html.ActionLink("Back to List", "DisplayProduct", "Product")
+</p>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<invetory_managament.Models.Purchase>
+
+@{
+    ViewBag.Title = "DisplayPurchase";
+}
+
+<h2>Display Purchase</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CraetePurchase","Purchase", new {@class= "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Purchase Product")
+        </th>
+        <th>
+            @Html.DisplayName("Purchase Qty")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        <th>
+            @Html.DisplayName("Action")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.purchase_prod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.purchase_qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.purchase_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdatePurchase","Purchase", new { id=item.Id }, new {@class="btn btn-primary" }) |
+            @Html.ActionLink("Details", "DetailPurchase", "Purchase", new { id=item.Id },new {@class= "btn btn-success" }) |
+            @Html.ActionLink("Delete", "DeletePurchase", "Purchase", new { id=item.Id }, new {@class= "btn btn-danger" })
+        </td>
+    </tr>
+}
+    
+
+</table>

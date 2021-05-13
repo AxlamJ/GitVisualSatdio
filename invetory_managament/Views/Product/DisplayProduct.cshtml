@@ -1,0 +1,41 @@
+﻿@model IEnumerable<invetory_managament.Models.Product>
+
+@{
+    ViewBag.Title = "DisplayProduct";
+}
+
+<h2>Display Product</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateProduct", new { }, new { @class = "btn btn-primary", @style="" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Product Name")
+        </th>
+        <th>
+            @Html.DisplayName("Product Qty")
+        </th>
+        <th>
+            @Html.DisplayName("Action")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_qty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateProduct", "Product", new { id=item.Id },new {@class="btn btn-primary" }) |
+            @Html.ActionLink("Details", "DetailProduct", "Product", new { id=item.Id }, new {@class="btn btn-success" }) |
+            @Html.ActionLink("Delete", "DeleteProduct", new { id=item.Id }, new {@class="btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

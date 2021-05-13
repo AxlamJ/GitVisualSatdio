@@ -1,0 +1,41 @@
+﻿@model invetory_managament.Models.Sale
+
+@{
+    ViewBag.Title = "DetailSales";
+}
+
+<h2>Detail Sales</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Sales Product")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sale_prod)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sales Qty")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sale_qty)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sale_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "DisplaySale", "Sales")
+</p>
